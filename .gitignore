@@ -1,0 +1,44 @@
+# Configuration
+files/config/config.php
+files/config/*.php
+!files/config/config.php.template
+
+# Cache
+files/cache/
+files/session/
+files/store/
+files/faceOff/
+files/tmp/
+files/temp/
+
+# Logs
+*.log
+files/debug/
+files/log/
+
+# Backups
+*.sql
+*.sql.gz
+*.bak
+*.backup
+
+# macOS
+._*
+.DS_Store
+
+# SEO verification files
+google*.html
+naver*.html
+robots.txt
+sitemap.xml
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Test files
+tests/
+codeception.dist.yml
+setup_files/
+setup_files*.tar.gz

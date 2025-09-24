@@ -1,0 +1,153 @@
+<config version="2" />
+<!DOCTYPE html>
+<html lang="{!! $lang_type = Context::getLangType() !!}" class="xe-mobilelayout"|if="$m">
+<head>
+
+<!-- META -->
+<meta charset="utf-8">
+<meta name="generator" content="Rhymix">
+<meta name="viewport" content="{{ config('mobile.viewport') ?? HTMLDisplayHandler::DEFAULT_VIEWPORT }}" />
+<meta name="csrf-token" content="{!! \Rhymix\Framework\Session::getGenericToken() !!}" />
+
+<?php if (strpos($_SERVER['HTTP_HOST'], 'busanwallet.io') !== false): ?>
+    <meta name="description" content="부산월렛은 부산시민을 위한 공식 Web3 지갑으로, 안전한 디지털 자산 관리와 다양한 온체인 서비스를 제공합니다.">
+<?php elseif (strpos($_SERVER['HTTP_HOST'], 'anamwallet.io') !== false): ?>
+    <meta name="description" content="AnamWallet is a next-generation Web3 wallet for global users, offering multi-chain support, secure digital asset management, and local government-linked services.">
+<?php endif; ?>
+
+
+@foreach (Context::getMetaTag() as $val)
+@if ($val['is_before_title'])
+<meta http-equiv="{{ $val['name'] }}"|if="$val['is_http_equiv']" name="{{ $val['name'] }}"|if="!$val['is_http_equiv']" content="{!! $val['content'] !!}" />
+@endif
+@endforeach
+
+<!-- TITLE -->
+<?php if (strpos($_SERVER['HTTP_HOST'], 'busanwallet.io') !== false): ?>
+  <title>부산월렛(BusanWallet)</title>
+  <?php else: ?>
+    <title>AnamWallet(안암월렛)</title>
+    <?php endif; ?>
+
+
+<!-- CSS -->
+@foreach (Context::getCssFile(true) as $css_file)
+<link rel="stylesheet" href="{!! $css_file['file'] !!}" media="{{ $css_file['media'] }}"|if="$css_file['media'] !== 'all'" />
+@endforeach
+
+<!-- JS -->
+@foreach (Context::getJsFile('head', true) as $js_file)
+<script src="{!! $js_file['file'] !!}"{!! $js_file['attrs'] !!}></script>
+@endforeach
+
+<!-- RSS -->
+@if (!empty($rss_url))
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ $rss_url }}" />
+@endif
+@if (!empty($general_rss_url))
+<link rel="alternate" type="application/rss+xml" title="Site RSS" href="{{ $general_rss_url }}" />
+@endif
+@if (!empty($atom_url))
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{{ $atom_url }}" />
+@endif
+@if (!empty($general_atom_url))
+<link rel="alternate" type="application/atom+xml" title="Site Atom" href="{{ $general_atom_url }}" />
+@endif
+
+<!-- ICONS AND OTHER LINKS -->
+@if (!empty($canonical_url = Context::getCanonicalURL()))
+<link rel="canonical" href="{{ $canonical_url }}" />
+@endif
+
+<!-- FAVICON -->
+<?php
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+		          $isBusan = (strpos($host, 'busanwallet.io') !== false || strpos($host, 'www.busanwallet.io') !== false);
+		      ?>
+		      @if ($isBusan)
+		          <!-- BusanWallet: 파비콘을 명시적으로 고정 -->
+			      <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/sub/busanwallet_logo.png" />
+			          <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/sub/busanwallet_logo.png" />
+				      <link rel="shortcut icon" href="/assets/images/sub/busanwallet_logo.png" />
+				          <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/sub/busanwallet_logo.png" />
+					  @elseif (!empty($favicon_url))
+					      <!-- 그 외 도메인은 기존 Rhymix 설정값을 사용 -->
+					          <link rel="shortcut icon" href="{{ $favicon_url }}" />
+						  @endif
+
+<!-- OTHER HEADERS -->
+@foreach (Context::getMetaTag() as $val)
+@if (!$val['is_before_title'])
+<meta http-equiv="{{ $val['name'] }}"|if="$val['is_http_equiv']" name="{{ $val['name'] }}"|if="!$val['is_http_equiv']" content="{!! $val['content'] !!}" />
+@endif
+@endforeach
+@foreach (Context::getOpenGraphData() as $og_metadata)
+<meta property="{{ $og_metadata['property'] }}" content="{{ $og_metadata['content'] }}" />
+@endforeach
+
+
+{!! Context::getHtmlHeader() !!}
+
+<?php
+						    $host = $_SERVER['HTTP_HOST'] ?? '';
+						    $isBusan = (strpos($host, 'busanwallet.io') !== false || strpos($host, 'www.busanwallet.io') !== false);
+						    $reqUri = $_SERVER['REQUEST_URI'] ?? '/';
+						    $barePath = strtok($reqUri, '?');
+						?>
+						<?php if ($isBusan): ?>
+						    <link rel="canonical" href="https://busanwallet.io<?= htmlspecialchars($barePath, ENT_QUOTES) ?>" />
+						        <meta property="og:site_name" content="BusanWallet" />
+							    <meta property="og:title" content="부산월렛" />
+							        <meta property="og:description" content="부산월렛은 부산시민을 위한 공식 Web3 지갑으로, 안전한 디지털 자산 관리와 다양한 온체인 서비스를 제공합니다." />
+										    <meta property="og:image" content="https://busanwallet.io/assets/images/sub/busanwallet_logo_1.png" />
+												        <meta property="og:url" content="https://busanwallet.io<?= htmlspecialchars($barePath, ENT_QUOTES) ?>" />
+													<?php endif; ?>
+
+
+
+
+
+{!! Context::getHtmlHeader() !!}
+
+
+
+</head>
+<body{!! Context::getBodyClass() !!}>
+
+
+<!-- BODY START -->
+<body{!! Context::getBodyClass() !!}>
+
+<!-- COMMON JS VARIABLES -->
+<script>
+	var default_url = @json(\Rhymix\Framework\URL::encodeIdna(Context::getDefaultUrl(null, RX_SSL)));
+	var current_url = @json(\Rhymix\Framework\URL::encodeIdna($current_url));
+	var request_uri = @json(\Rhymix\Framework\URL::encodeIdna($request_uri));
+	var current_lang = xe.current_lang = @json($lang_type);
+	var current_mid = @json($mid ?? null);
+	var http_port = @json(Context::get("_http_port") ?: null);
+	var https_port = @json(Context::get("_https_port") ?: null);
+	var enforce_ssl = @json($site_module_info->security === 'always' ? true : false);
+	var cookies_ssl = @json(config('session.use_ssl_cookies') ? true : false);
+	var rewrite_level = @json(intval(\Rhymix\Framework\Router::getRewriteLevel()));
+	if (detectColorScheme) detectColorScheme();
+</script>
+
+<!-- PAGE CONTENT -->
+{!! Context::getBodyHeader() !!}
+{!! $content !!}
+{!! Context::getHtmlFooter() !!}
+{!! "\n\n" !!}
+
+<!-- ETC -->
+<div id="rhymix_alert"></div>
+<div id="rhymix_debug_panel"></div>
+<div id="rhymix_debug_button"></div>
+
+<!-- BODY JS -->
+@foreach (Context::getJsFile('body', true) as $js_file)
+<script src="{!! $js_file['file'] !!}"></script>
+@endforeach
+
+</body>
+</html>

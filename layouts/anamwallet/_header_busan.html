@@ -1,0 +1,82 @@
+<load target="_header.scss" />
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+
+<style>
+<!--@if($layout_info->logo_margin)-->
+.bh .logo {margin: {$layout_info->logo_margin};}
+<!--@end-->
+.busan-header .logo a {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+}
+</style>
+
+<!-- 부산월렛 전용 심플 헤더 -->
+<header class="header_wrap busan-header">
+	<div class="header bh_wrap clearfix">
+		<div class="bh_row ai-c">
+			<h1 class="logo col">
+				  <a href="/?mid=busan_wallet" class="logo-link" aria-label="Busan Wallet">
+                                     <img src="/assets/images/sub/busanwallet_logo.png" alt="Busan Wallet" class="logo-img-hd" />
+				     <span class="logo-text">BusanWallet</span>
+				  </a>
+			</h1>
+		</div>
+	</div>
+</header>
+
+<!-- 모바일 헤더 추가 -->
+<!-- 모바일 헤더 추가 -->
+<header class="bh mobile_header_wrap">
+	  <div class="bh mobile_header_top bh_bg_color_white">
+	           <div class="bh mobile_logo">
+			         <a href="/?mid=busan_wallet" class="logo-link" aria-label="Busan Wallet">
+					         <img src="/assets/images/sub/busanwallet_logo.png" alt="Busan Wallet" class="logo-img-hd" />
+						         <span class="logo-text" 
+							                     style="font-size:20px; font-weight:800; font-family:'Montserrat', sans-serif; color:#000;">
+								           BusanWallet
+									           </span>
+										         </a>
+											     </div>
+											       </div>
+</header>
+
+
+<style>
+  /* 기존 옵션 유지 */
+  <!--@if($layout_info->logo_margin)-->
+    .bh .logo {margin: {$layout_info->logo_margin};}
+      <!--@end-->
+
+        /* 헤더 로고 텍스트 스타일은 더이상 쓰지 않게 0으로 */
+        .busan-header .logo a{
+		    font-size:0; line-height:0; display:inline-flex; align-items:center;
+		      }
+
+	  /* 데스크탑 로고 이미지 크기 고정 */
+	  .busan-header .logo img {
+		      height:50px;           /* 필요하면 24~36px 사이에서 조절 */
+		          width:auto;
+			      display:block;         /* baseline 여백 제거 */
+			        }
+
+	    /* 헤더 행을 왼쪽 정렬 (중앙으로 몰리는 경우 방지) */
+	    .busan-header .bh_row { justify-content:flex-start; }
+
+	      /* 모바일 로고 */
+	      .mobile_header_wrap .mobile_logo a{
+		          font-size:0; line-height:0; display:inline-flex; align-items:center;
+			    }
+	        .mobile_header_wrap .mobile_logo img{
+			    height:22px; width:auto; display:block;
+			      }
+
+
+		.logo-link { display: flex; /* 이미지와 글자를 가로로 */ align-items: center; /* 세로 중앙 정렬 */ gap: 8px; /* 로고와 텍스트 사이 간격 */ text-decoration: none; /* 밑줄 제거 */ } .logo-img-hd { height: 32px; /* 로고 높이 (헤더에 맞게 조절) */ width: auto; display: block; } .logo-text { font-size: 28px; /* 브랜드명 크게 */ font-weight: 700; /* 두껍게 */ color: #000; /* 검은색 */ line-height: 1; /* 세로 간격 딱 맞춤 */ font-family: "Montserrat", sans-serif;}
+
+
+/* 헤더 왼쪽 여백 싹 제거 */
+</style>
