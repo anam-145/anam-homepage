@@ -11,6 +11,9 @@ files/faceOff/
 files/tmp/
 files/temp/
 
+# Environment
+files/env/
+
 # Logs
 *.log
 files/debug/
