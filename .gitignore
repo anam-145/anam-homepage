@@ -45,3 +45,5 @@ tests/
 codeception.dist.yml
 setup_files/
 setup_files*.tar.gz
+
+CLAUDE.md

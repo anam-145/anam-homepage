@@ -6,9 +6,9 @@ var langTexts = {
 		slider_main_subtitle: "AnamWallet이 <br> 당신의 디지털 세상을 연결합니다",
 		slider_download_btn: "지금 다운로드",
 		slider_coming_soon: "Coming Soon (9월 10일)",
-                slider_android_download: "안드로이드 다운로드",
+		slider_android_download: "안드로이드 다운로드",
 		header_coming_soon: "Coming Soon",
-                header_android_download: "다운로드",
+		header_android_download: "다운로드",
 		slider_youtube_btn: "YouTube",
 
 		// Section 1
@@ -18,7 +18,7 @@ var langTexts = {
 		section1_check3: "나만의 지갑 완성",
 		section1_btn: "Go To Hub Page",
 		section1_btn_coming: "Coming Soon",
-                section1_btn_hub: "안암 허브 바로가기",
+		section1_btn_hub: "안암 허브 바로가기",
 
 		// Section 2
 		section2_subtitle: "지자체와 함께하는 <br> 스마트 로컬 생활",
@@ -28,8 +28,7 @@ var langTexts = {
 		section2_check3: "부산광역시 공식 파트너",
 		section2_btn: "View More Busan Wallet",
 		section2_btn_coming: "Coming Soon",
-                section2_btn_busan: "부산월렛 바로가기",
-
+		section2_btn_busan: "부산월렛 바로가기",
 
 		// Section 3
 		section3_subtitle: "당신의 모든 디지털 자산, <br> 하나의 지갑에",
@@ -131,8 +130,7 @@ var langTexts = {
 		footer_fax: "팩스",
 		footer_business_number: "사업자 등록번호",
 		footer_address: "주소",
-		footer_address_detail:
-			"부산광역시 동구 중앙대로 365, 7층(수정동)",
+		footer_address_detail: "부산광역시 동구 중앙대로 365, 7층(수정동)",
 		footer_copyright: "Copyright 2025. 안암145 Co. All rights reserved.",
 
 		// News section translations
@@ -171,9 +169,9 @@ var langTexts = {
 		slider_main_subtitle: "AnamWallet connects <br> your digital world",
 		slider_download_btn: "Download Now",
 		slider_coming_soon: "Coming Soon (Sep 10)",
-                slider_android_download: "Android Download",
+		slider_android_download: "Google Play Download",
 		header_coming_soon: "Coming Soon",
-                header_android_download: "Download",
+		header_android_download: "Download",
 		slider_youtube_btn: "YouTube",
 
 		// Section 1
@@ -183,9 +181,9 @@ var langTexts = {
 		section1_check3: "Complete your own wallet",
 		section1_btn: "Go To Hub Page",
 		section1_btn_coming: "Coming Soon",
-                section1_btn_hub: "Go to Anam Hub",
+		section1_btn_hub: "Go to Anam Hub",
 
-                // Section 2
+		// Section 2
 		section2_subtitle: "Smart local living <br> with municipalities",
 		section2_check1: "Start local life immediately with one skin",
 		section2_check2:
@@ -193,7 +191,7 @@ var langTexts = {
 		section2_check3: "Official partner of Busan Metropolitan City",
 		section2_btn: "View More Busan Wallet",
 		section2_btn_coming: "Coming Soon",
-                section2_btn_busan: "Go to Busan Wallet",
+		section2_btn_busan: "Go to Busan Wallet",
 
 		// Section 3
 		section3_subtitle: "All your digital assets, <br> in one wallet",
