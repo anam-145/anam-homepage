@@ -1,7 +1,11 @@
 # Configuration
-files/config/config.php
 files/config/*.php
+!files/config/config.php
 !files/config/config.php.template
+
+# Environment variables
+.env
+!.env.example
 
 # Cache
 files/cache/
